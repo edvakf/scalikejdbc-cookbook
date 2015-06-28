@@ -129,7 +129,7 @@ Let's say you have an insert statement such as the following:
     
     val alice: Memebr = Member.create("Alice", None)
 
-This will work fine by itself, but the problem is that the transaction is confined in this `create` method.
+This will work fine by itself, but the problem is that the transaction is confined to this `create` method.
 
 What that means is that if you write a block like below, the `Member.create` would not be rolled back even when a `NotFoundException` was thrown. This should not be an intended behavior.
 
